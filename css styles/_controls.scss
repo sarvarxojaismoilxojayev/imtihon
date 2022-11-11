@@ -1,0 +1,139 @@
+.container {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.btn {
+    background: #003459;
+    border-radius: 57px;
+    color: white;
+    font-size: 16px;
+    padding: 15px 31px;
+    font-family: 'Josefin Sans', sans-serif;
+    user-select: none;
+    transition: 0.5s ease-in;
+
+    &:hover {
+        background: none;
+        color: #003459;
+        border: 1px solid #003459;
+    }
+}
+
+%btn-2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    border: 1px solid #003459;
+    padding: 15px 45px 15px 31px;
+    border-radius: 57px;
+    color: #003459;
+}
+
+.btn-2 {
+    @extend %primary-btn;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+    &:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropbtn {
+        background-color: none;
+        color: #20435a;
+        background: none;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+
+        .language {
+            margin-right: 20px;
+        }
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 95px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+
+        a {
+            color: #20435a;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+
+            &:hover {
+                background-color: #ddd;
+            }
+        }
+    }
+}
+
+.shadow {
+    position: absolute;
+    z-index: -1;
+}
+
+.primary-btn {
+    @extend %primary-btn;   
+}
+
+%primary-btn {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 50px;
+    color: #003459;
+    padding: 12px 45px 12px 31px;
+    border: 1.5px solid #003459;
+    transition: 1s ease-in-out;
+    &:hover {
+        background: #003459;
+        color: white;
+    }
+    .nerve-icon {
+        font-size: 20px;
+        vertical-align: middle;
+    }
+}
+
+.icon11 {
+    font-size: 30px;
+    color: #003459;
+}
+
+.loader {
+    position: fixed;
+    inset: 0;
+    background-color: #fff;
+    z-index: 9999;
+    display: grid;
+    place-items:center;
+    animation: boshlan 1s linear 3s 1 forwards;
+    .loading {
+        width: 100px;
+        height: 100px;
+        background-color: transparent;
+        border-radius:50% ;
+        border: 20px dotted gray ;
+        animation:aylan 1s ease-in-out infinite  ;
+    }
+}
+@keyframes aylan {
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes boshlan {
+    to {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
